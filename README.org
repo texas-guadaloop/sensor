@@ -1,0 +1,8 @@
+* WE GO SUPER HARD WITH THEM SENSORS BOI
+** Accelerometer
+   The accelerometer used for the pod is the PCB 3711B112G from piezotronics
+** Laser
+   The laser used is the Keyence ~~~pls fill in later~~~
+** Microcontrollers
+   For prototyping, we are using the Arduino Uno board
+   For release we are using the TM4C microcontroller

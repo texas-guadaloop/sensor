@@ -1,0 +1,14 @@
+<panel>
+   <size>Large</size>
+   <boards class="java.util.ArrayList">
+      <panelBoard>
+         <filename>/Users/nickedelman/Documents/eagle/Brakingv1/BrakingSchematicv1</filename>
+         <x>10403</x>
+         <y>61173</y>
+         <angle>0</angle>
+         <generateOutline>false</generateOutline>
+         <topLayerTimestamp>2016-06-22 14:44:59.0 CDT</topLayerTimestamp>
+         <bottomLayerTimestamp>2016-06-22 14:44:59.0 CDT</bottomLayerTimestamp>
+      </panelBoard>
+   </boards>
+</panel>

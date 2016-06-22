@@ -1,0 +1,14 @@
+<panel>
+   <size>Large</size>
+   <boards class="java.util.ArrayList">
+      <panelBoard>
+         <filename>/Users/nickedelman/Documents/eagle/VoltageDv1/VoltageDv1</filename>
+         <x>12098</x>
+         <y>119456</y>
+         <angle>0</angle>
+         <generateOutline>false</generateOutline>
+         <topLayerTimestamp>2016-06-21 14:43:55.0 CDT</topLayerTimestamp>
+         <bottomLayerTimestamp>2016-06-21 14:43:55.0 CDT</bottomLayerTimestamp>
+      </panelBoard>
+   </boards>
+</panel>

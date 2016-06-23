@@ -10264,6 +10264,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
+<part name="OUT(0/4V)2" library="testpad" deviceset="TPS" device="B1,27"/>
 </parts>
 <sheets>
 <sheet>
@@ -10306,6 +10307,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="P+1" gate="VCC" x="53.34" y="88.9"/>
 <instance part="P+2" gate="VCC" x="-40.64" y="58.42"/>
 <instance part="P+3" gate="VCC" x="116.84" y="93.98" rot="R270"/>
+<instance part="OUT(0/4V)2" gate="G$1" x="137.16" y="68.58" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -10404,6 +10406,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="124.46" y1="68.58" x2="134.62" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="58.42" x2="124.46" y2="68.58" width="0.1524" layer="91"/>
 <junction x="124.46" y="68.58"/>
+<pinref part="OUT(0/4V)2" gate="G$1" pin="PP"/>
 </segment>
 </net>
 <net name="N$1" class="0">

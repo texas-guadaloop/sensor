@@ -10240,12 +10240,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="R13" library="resistor" deviceset="R-US_" device="V234/12" value="100k"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="OUT(0/4V)1" library="testpad" deviceset="TPS" device="B1,27"/>
-<part name="IN(0/12V)1" library="testpad" deviceset="TPS" device="B1,27"/>
-<part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
 <part name="OUT(0/4V)2" library="testpad" deviceset="TPS" device="B1,27"/>
-<part name="INPUT2" library="testpad" deviceset="TPS" device="PAD1-13"/>
+<part name="INPUT(-2/2V)ACC" library="testpad" deviceset="TPS" device="PAD1-13"/>
+<part name="BATT(0/12V)" library="testpad" deviceset="TPS" device="B1,27"/>
+<part name="IN(0/12V)LASE" library="testpad" deviceset="TPS" device="PAD1-13"/>
 </parts>
 <sheets>
 <sheet>
@@ -10283,12 +10283,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="R13" gate="G$1" x="17.78" y="106.68"/>
 <instance part="GND13" gate="1" x="-38.1" y="93.98"/>
 <instance part="OUT(0/4V)1" gate="G$1" x="-12.7" y="93.98" rot="R180"/>
-<instance part="IN(0/12V)1" gate="G$1" x="25.4" y="93.98" rot="R180"/>
-<instance part="P+1" gate="VCC" x="53.34" y="88.9"/>
 <instance part="P+2" gate="VCC" x="-40.64" y="58.42"/>
 <instance part="P+3" gate="VCC" x="116.84" y="93.98" rot="R270"/>
 <instance part="OUT(0/4V)2" gate="G$1" x="137.16" y="68.58" rot="R270"/>
-<instance part="INPUT2" gate="G$1" x="-5.08" y="55.88" rot="R180"/>
+<instance part="INPUT(-2/2V)ACC" gate="G$1" x="-5.08" y="55.88" rot="R180"/>
+<instance part="BATT(0/12V)" gate="G$1" x="53.34" y="88.9"/>
+<instance part="IN(0/12V)LASE" gate="G$1" x="25.4" y="93.98" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -10473,18 +10473,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="R13" gate="G$1" pin="2"/>
-<wire x1="22.86" y1="106.68" x2="25.4" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="IN(0/12V)1" gate="G$1" pin="PP"/>
-<wire x1="25.4" y1="106.68" x2="25.4" y2="96.52" width="0.1524" layer="91"/>
-<label x="35.56" y="101.6" size="1.778" layer="95" rot="R180"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="P" pin="V+"/>
-<wire x1="53.34" y1="78.74" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="P+1" gate="VCC" pin="VCC"/>
-</segment>
-<segment>
 <pinref part="C2" gate="G$1" pin="+"/>
 <pinref part="IC2" gate="A1" pin="VI"/>
 <wire x1="-40.64" y1="38.1" x2="-40.64" y2="43.18" width="0.1524" layer="91"/>
@@ -10498,12 +10486,26 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="99.06" y1="93.98" x2="114.3" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="P+3" gate="VCC" pin="VCC"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="P" pin="V+"/>
+<wire x1="53.34" y1="78.74" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="BATT(0/12V)" gate="G$1" pin="PP"/>
+</segment>
 </net>
 <net name="N$8" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="63.5" x2="-5.08" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="INPUT2" gate="G$1" pin="PP"/>
+<pinref part="INPUT(-2/2V)ACC" gate="G$1" pin="PP"/>
+</segment>
+</net>
+<net name="VLASER" class="0">
+<segment>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="22.86" y1="106.68" x2="25.4" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="106.68" x2="25.4" y2="96.52" width="0.1524" layer="91"/>
+<label x="35.56" y="101.6" size="1.778" layer="95" rot="R180"/>
+<pinref part="IN(0/12V)LASE" gate="G$1" pin="PP"/>
 </segment>
 </net>
 </nets>

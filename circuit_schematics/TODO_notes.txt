@@ -1,0 +1,17 @@
+Combined Circuit:
+
+Issues with board:
+
+Ground:
+A ground plane seems to be the right decision, but there needs to be a connection from the plane to battery and microcontroller ground
+
+Power:
+All circuits can take power from the same source, so should there be a power line that runs through the board? If so, how? I have no idea . . .
+
+Outputs:
+We need to get the outputs connected with the TM4C, lets look at the pinout and put that on the board,
+
+Actual Connections:
+Are we mounting the battery on the board? (Most likely not, right?)
+Are we mounting the board onto the microcontroller? Or are we using a ribbon cable?
+- The ribbon cable may end up being the way to go. I don't like the idea of running large currents near the microcontroller

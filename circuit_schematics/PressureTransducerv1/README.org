@@ -1,0 +1,6 @@
+* All circuits are in the same schematic
+
+* We should look at this:
+  [[https://www.pololu.com/product/1186][Current Sensor Carrier]]
+  [[http://www.vwlowen.co.uk/arduino/current/current.htm][Instrumentation Amplifier]]
+  [[https://www.adafruit.com/product/904][Adafruit High Side DC Current Sensor Breakout]]

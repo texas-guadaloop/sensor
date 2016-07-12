@@ -3695,107 +3695,108 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </class>
 </classes>
 <parts>
+<part name="IC1" library="linear" deviceset="AD590H" device=""/>
 <part name="SENSOR" library="linear" deviceset="AD590H" device=""/>
 <part name="P+1" library="supply1" deviceset="+12V" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="SHUNT" library="resistor" deviceset="R-US_" device="0207/10" value="100"/>
 <part name="IC2" library="linear" deviceset="*1458" device="N" technology="LM"/>
-<part name="R1" library="resistor" deviceset="R-US_" device="0207/10" value="1K"/>
-<part name="R2" library="resistor" deviceset="R-US_" device="0207/10" value="50K"/>
-<part name="R3" library="resistor" deviceset="R-US_" device="0207/10" value="1K"/>
-<part name="R4" library="resistor" deviceset="R-US_" device="0207/10" value="50K"/>
+<part name="R1" library="resistor" deviceset="R-US_" device="0207/10" value="100"/>
+<part name="R2" library="resistor" deviceset="R-US_" device="0207/10" value="100"/>
+<part name="R3" library="resistor" deviceset="R-US_" device="0207/10" value="100"/>
+<part name="GND2" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="99.06" y="50.8" size="1.778" layer="91">Voltage Output</text>
-<text x="33.02" y="60.96" size="1.778" layer="91">Op Amp Power and Ground
-same as the sensors</text>
-<text x="15.24" y="33.02" size="1.778" layer="91" rot="R90">the "shunt" is a
-different part altogether
-not just a small resistor</text>
 </plain>
 <instances>
-<instance part="SENSOR" gate="A" x="22.86" y="25.4"/>
+<instance part="IC1" gate="A" x="71.12" y="63.5"/>
+<instance part="SENSOR" gate="A" x="22.86" y="53.34"/>
 <instance part="P+1" gate="1" x="22.86" y="68.58"/>
 <instance part="GND1" gate="1" x="22.86" y="5.08"/>
-<instance part="SHUNT" gate="G$1" x="22.86" y="45.72" rot="R90"/>
-<instance part="IC2" gate="A" x="60.96" y="50.8"/>
-<instance part="IC2" gate="B" x="63.5" y="78.74"/>
-<instance part="R1" gate="G$1" x="38.1" y="53.34"/>
-<instance part="R2" gate="G$1" x="60.96" y="33.02"/>
-<instance part="R3" gate="G$1" x="38.1" y="38.1"/>
-<instance part="R4" gate="G$1" x="45.72" y="17.78" rot="R90"/>
+<instance part="SHUNT" gate="G$1" x="22.86" y="30.48" rot="R90"/>
+<instance part="IC2" gate="A" x="55.88" y="38.1"/>
+<instance part="IC2" gate="B" x="99.06" y="63.5"/>
+<instance part="R1" gate="G$1" x="38.1" y="40.64"/>
+<instance part="R2" gate="G$1" x="66.04" y="25.4"/>
+<instance part="R3" gate="G$1" x="40.64" y="17.78" rot="R90"/>
+<instance part="GND2" gate="1" x="55.88" y="15.24"/>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="SHIELD" class="0">
+<segment>
+<pinref part="SENSOR" gate="A" pin="CAN"/>
+<wire x1="17.78" y1="53.34" x2="5.08" y2="53.34" width="0.1524" layer="91"/>
+<label x="5.08" y="55.88" size="1.778" layer="95"/>
+</segment>
+</net>
 <net name="+12V" class="0">
 <segment>
+<pinref part="SENSOR" gate="A" pin="+"/>
 <pinref part="P+1" gate="1" pin="+12V"/>
-<pinref part="SHUNT" gate="G$1" pin="2"/>
-<wire x1="22.86" y1="66.04" x2="22.86" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="22.86" y1="53.34" x2="22.86" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="53.34" x2="22.86" y2="53.34" width="0.1524" layer="91"/>
-<junction x="22.86" y="53.34"/>
+<wire x1="22.86" y1="60.96" x2="22.86" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="63.5" x2="22.86" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="63.5" x2="55.88" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="63.5" x2="55.88" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="SHUNT" gate="G$1" pin="1"/>
-<pinref part="SENSOR" gate="A" pin="+"/>
-<wire x1="22.86" y1="40.64" x2="22.86" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="22.86" y1="38.1" x2="22.86" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="38.1" x2="22.86" y2="38.1" width="0.1524" layer="91"/>
-<junction x="22.86" y="38.1"/>
+<pinref part="SENSOR" gate="A" pin="-"/>
+<pinref part="SHUNT" gate="G$1" pin="2"/>
+<wire x1="22.86" y1="48.26" x2="22.86" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="40.64" x2="22.86" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="40.64" x2="22.86" y2="40.64" width="0.1524" layer="91"/>
+<junction x="22.86" y="40.64"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
+<pinref part="SHUNT" gate="G$1" pin="1"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<pinref part="SENSOR" gate="A" pin="-"/>
-<wire x1="22.86" y1="7.62" x2="22.86" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="22.86" y1="10.16" x2="22.86" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="12.7" x2="45.72" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="10.16" x2="22.86" y2="10.16" width="0.1524" layer="91"/>
-<junction x="22.86" y="10.16"/>
+<wire x1="22.86" y1="25.4" x2="22.86" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="12.7" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="12.7" x2="22.86" y2="12.7" width="0.1524" layer="91"/>
+<junction x="22.86" y="12.7"/>
+</segment>
+<segment>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="55.88" y1="35.56" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="IC2" gate="A" pin="+IN"/>
-<wire x1="43.18" y1="53.34" x2="45.72" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="45.72" y1="53.34" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="22.86" x2="45.72" y2="53.34" width="0.1524" layer="91"/>
-<junction x="45.72" y="53.34"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="48.26" y1="40.64" x2="43.18" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="IC2" gate="A" pin="-IN"/>
-<wire x1="43.18" y1="38.1" x2="53.34" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="48.26" y1="35.56" x2="40.64" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="35.56" x2="40.64" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="38.1" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="33.02" x2="53.34" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="33.02" x2="53.34" y2="38.1" width="0.1524" layer="91"/>
-<junction x="53.34" y="38.1"/>
+<wire x1="40.64" y1="25.4" x2="40.64" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="25.4" x2="40.64" y2="25.4" width="0.1524" layer="91"/>
+<junction x="40.64" y="25.4"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="IC2" gate="A" pin="OUT"/>
-<wire x1="68.58" y1="50.8" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="50.8" x2="96.52" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="33.02" x2="78.74" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="33.02" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
-<junction x="78.74" y="50.8"/>
+<wire x1="76.2" y1="38.1" x2="91.44" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="25.4" x2="76.2" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="25.4" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
+<junction x="76.2" y="38.1"/>
 </segment>
 </net>
 </nets>
@@ -3803,10 +3804,4 @@ not just a small resistor</text>
 </sheets>
 </schematic>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>

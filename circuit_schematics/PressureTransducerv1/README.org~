@@ -1,5 +1,4 @@
 * All circuits are in the same schematic
-  looking at the manual, the MAX load resistor can only be 100ohms - assuming 12V
 
 * We should look at this:
   [[https://www.pololu.com/product/1186][Current Sensor Carrier]]
